@@ -46,7 +46,6 @@
         <woodstox-core-asl.version>4.4.1</woodstox-core-asl.version>
         <awaitility.version>4.0.1</awaitility.version>
         <assertj-core.version>3.14.0</assertj-core.version>
-        <maven-enforcer-plugin.version>3.0.0-M2</maven-enforcer-plugin.version>
     </properties>
 
     <dependencies>
@@ -220,7 +219,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>${maven-enforcer-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>enforce-versions</id>
@@ -229,18 +227,16 @@
                         </goals>
                         <configuration>
                             <rules>
-                                <rule>
-                                    <requireMavenVersion>
-                                        <version>[3.6.0,)</version>
-                                    </requireMavenVersion>
-                                    <requireJavaVersion>
-                                        <version>11</version>
-                                    </requireJavaVersion>
-                                    <requireReleaseDeps>
-                                        <onlyWhenRelease>true</onlyWhenRelease>
-                                        <message>Release builds must not have on snapshot dependencies</message>
-                                    </requireReleaseDeps>
-                                </rule>
+                                <requireMavenVersion>
+                                    <version>[3.6.0,)</version>
+                                </requireMavenVersion>
+                                <requireJavaVersion>
+                                    <version>11</version>
+                                </requireJavaVersion>
+                                <requireReleaseDeps>
+                                    <onlyWhenRelease>true</onlyWhenRelease>
+                                    <message>Release builds must not have on snapshot dependencies</message>
+                                </requireReleaseDeps>
                             </rules>
                         </configuration>
                     </execution>
